@@ -3,9 +3,8 @@ package com.soarhigh.zamar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.soarhigh.zamar.databinding.ActivityMainBinding;
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         binding.myrecyclerview.setLayoutManager(layoutManager);
-        setContentView(R.layout.activity_main);
+        setContentView(binding.getRoot());
 
     }
 
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     {
         pojoSlideArrayList = new ArrayList<>();
 
-        pojoSlideArrayList.add(new POJOSlide("Oneplus 5","https://www.youtube.com/watch?v=sE80h3_bv0c","https://i9.ytimg.com/vi_webp/sE80h3_bv0c/mqdefault.webp?v=5985b541&sqp=CMjerIcG&rs=AOn4CLDkFVmvmnQza99IgXDKijc-XkH-vw"));
+        pojoSlideArrayList.add(new POJOSlide("Oneplus 5","https://www.youtube.com/watch?v=sE80h3_bv0c",""));
 
         CustomAdapterVideo customAdapterVideo= new CustomAdapterVideo(pojoSlideArrayList,MainActivity.this);
         binding.myrecyclerview.setAdapter(customAdapterVideo);
